@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
   
+  
   root to: "homes#top"
+  get "home/about" => "homes#about"
   resources :books
   resources :users, only: [:edit, :update, :index, :show]
 end
