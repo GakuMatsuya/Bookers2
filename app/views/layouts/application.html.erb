@@ -11,14 +11,13 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href"/"><span>Bookers</span></a>
-          <button class="navbar-toggler" type="button"></button>
-          <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-              <li>
+  <header>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+      <div class="container">
+        <a class="navbar-brand col-md-2" href"/"><span>Bookers</span></a>
+            <ul class="navbar-nav navbar-right">
+              <% if user_signed_in? %>
+                <li>
                 <%= link_to "Home", user_path(current_user.id), class: "fas fa-home nav-link text-light" %>
               </li>
               <li>
@@ -30,6 +29,7 @@
               <li>
                 <%= link_to "logout",destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-light" %>
               </li>
+          </div>    
             <% else %>
               <li>
                 <%= link_to "Home", "/", class: "fas fa-home nav-link text-light" %>
@@ -45,14 +45,26 @@
               </li>
             <% end %>
           </ul>
+          </div>
         </div>
       </nav>
-
-
-
-
     <%= render "layouts/notifications" %>
+    </header>
 
     <%= yield %>
+  
+
+  <footer>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="mx-auto">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   </body>
+
+
 </html>
