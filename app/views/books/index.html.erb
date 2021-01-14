@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="row">
-    <%= render partial: "layouts/sidebar", locals: {book: @book, user: @user} %>
+    <%= render "layouts/sidebar", book: @book, user: @user %>
     <div class="col-md-8 offset-md-1">
       <h1>Books</h1>
       <table>
