@@ -14,8 +14,8 @@
   <header>
     <nav class="navbar navbar-dark bg-dark navbar-expand-md">
       <div class="container">
-        <a class="navbar-brand col-md-2" href"/"><span>Bookers</span></a>
-            <ul class="navbar-nav navbar-right">
+        <%= link_to "Bookers", "/", class: "navbar-brand col-md-2" %>
+        <ul class="navbar-nav navbar-right">
               <% if user_signed_in? %>
                 <li>
                 <%= link_to "Home", user_path(current_user.id), class: "fas fa-home nav-link text-light" %>
