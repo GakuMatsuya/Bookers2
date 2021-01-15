@@ -4,7 +4,7 @@
     <div class="col-md-8 offset-md-1">
     <h1>Book detail</h1>
   
-  <table>
+  <table class="table m-2">
     <tr>
       <td>
         <%= link_to user_path(@book.user) do %>
@@ -16,7 +16,7 @@
       <td><%= @book.body %></td>
       <% if @book.user == current_user %>
       <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
-      <td><%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-sm btn-danger" %></td>
+      <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-sm btn-danger" %></td>
       <% end %>
     </tr>
   </table>
