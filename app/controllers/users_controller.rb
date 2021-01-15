@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @user = current_user
+    @books = Book.all
+    @book = Book.new
   end
 
   def edit
