@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= render "layouts/sidebar", book: @book, user: @user %>
+    <%= render "layouts/sidebar", book: @newbook, user: @user %>
     <div class="col-md-8 offset-md-1">
     <h1>Book detail</h1>
   
@@ -8,7 +8,7 @@
     <tr>
       <td>
         <%= link_to user_path(@book.user) do %>
-          <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %> </br>
+          <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60" %> </br>
           <%= @user.name %>
         <% end %>
       </td>
